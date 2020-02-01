@@ -1,0 +1,4 @@
+*.log
+Logs/
+.vs/
+Temp/
