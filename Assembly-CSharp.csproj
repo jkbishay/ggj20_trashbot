@@ -84,6 +84,9 @@
  <Reference Include="UnityEditor.UI">
  <HintPath>D:/Gaming Development/ggj20_trashbot/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
+ <Reference Include="com.unity.quicksearch">
+ <HintPath>D:/Gaming Development/ggj20_trashbot/Library/ScriptAssemblies/com.unity.quicksearch.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>D:/Programs/Unity/2019.3.0f6/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
  </Reference>
