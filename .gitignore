@@ -1,4 +1,4 @@
 *.log
-Logs/
+obj/
 .vs/
 Temp/
