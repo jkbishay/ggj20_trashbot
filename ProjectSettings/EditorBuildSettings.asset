@@ -4,5 +4,23 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 774897dd83dd3924f806d2b6392d480e
+  - enabled: 1
+    path: Assets/Scenes/KouhaiMode.unity
+    guid: 75fb389994eb6914db29704ccf2f2cec
+  - enabled: 1
+    path: Assets/Scenes/SenpaiMode.unity
+    guid: 468dd210bb9bba0448232b9a4c9f0abe
+  - enabled: 1
+    path: Assets/Scenes/SenseiMode.unity
+    guid: 861d6cf9629f3814a9eed1293bac9495
+  - enabled: 1
+    path: Assets/Scenes/Win.unity
+    guid: 1aa4a4da338c2ac4ebff08314dd2f40b
+  - enabled: 1
+    path: Assets/Scenes/Lose.unity
+    guid: 046342ada0716ce488d0cfe740cb1334
   m_configObjects: {}

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,10 +11,10 @@ public class GameManager : MonoBehaviour
 
     private float WEEBInterval;
     private float timer;
-    private float timeLimit;
     private int WEEBCount;
+    private int respawnCount;
 
-    [SerializeField] private GameMode mode;
+    [SerializeField] private GameMode mode = GameMode.KOUHAI;
 
     private enum GameMode
     {
@@ -37,16 +38,12 @@ public class GameManager : MonoBehaviour
                  break;
             case GameMode.SENSEI:
                 WEEBInterval = 10;
-                WEEBCount = 3;
+                WEEBCount = 0;
                 break;
         }
 
         timer = 0;
-
-        for (int i = 0; i < WEEBCount; i++)
-        {
-            SpawnWEEB();
-        }
+        respawnCount = 0;
     }
 
     // Update is called once per frame
@@ -56,11 +53,27 @@ public class GameManager : MonoBehaviour
         {
             timer += Time.deltaTime;
         }
+        else
+        {
+            SceneManager.LoadScene("Lose");
+        }
 
         if (timer >= WEEBCount * WEEBInterval)
         {
             // spawn new bot
             SpawnWEEB();
+        }
+
+        if (mode == GameMode.SENSEI && timer >= 20 * respawnCount + 1)
+        {
+            this.GetComponent<LayoutSpawner>().RepopulateArea(100, 200);
+            respawnCount++;
+        }
+
+        if (mode == GameMode.KOUHAI && timer >= 15 * respawnCount + 1)
+        {
+            this.GetComponent<LayoutSpawner>().RepopulateArea(50, 100);
+            respawnCount++;
         }
     }
 

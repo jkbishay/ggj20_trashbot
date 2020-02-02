@@ -37,7 +37,7 @@ public class LayoutSpawner : MonoBehaviour
         Debug.Log(spawnedTrash);
     }
 
-    void RaycastPosition(Vector3 position, GameObject Item)
+    bool RaycastPosition(Vector3 position, GameObject Item)
     {
         RaycastHit hit;
 
@@ -53,14 +53,23 @@ public class LayoutSpawner : MonoBehaviour
             if (numberOfCollidersFound == 0)
             {
                 Spawn(Item, hit.point + new Vector3(0, 0.2f, 0), spawnRotation);
+                return true;
             }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            return false;
         }
     }
 
-    void SpreadItems(GameObject Item)
+    public bool SpreadItems(GameObject Item)
     {
         Vector3 randPos = new Vector3(Random.Range(-itemSpreadX, itemSpreadX), itemSpreadY, Random.Range(-itemSpreadZ, itemSpreadZ));
-        RaycastPosition(randPos, Item);
+        return RaycastPosition(randPos, Item);
     }
     
     void Spawn(GameObject Item, Vector3 position, Quaternion rotation)
@@ -75,5 +84,21 @@ public class LayoutSpawner : MonoBehaviour
         }
         Instantiate(Item, position, Item.transform.rotation);
         spawnedTrash++;
+    }
+
+    public void RepopulateArea(int hazardCount, int trashCount)
+    {
+        for (int i = 0; i < hazardCount; i++)
+        {
+            SpreadItems(Hazards[0]);
+        }
+
+        int trashIndex;
+        spawnedTrash = 0;
+        for (int i = 0; i < trashCount; i++)
+        {
+            trashIndex = Random.Range(0, TrashToSpawn.Length);
+            SpreadItems(TrashToSpawn[trashIndex]);
+        }
     }
 }

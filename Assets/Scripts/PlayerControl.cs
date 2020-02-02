@@ -8,6 +8,7 @@ public class PlayerControl : MonoBehaviour
     public Camera MainCam;
     public ParticleSystem FireEffect;
     public AudioClip yell;
+    public GameObject[] Limbs;
 
     private float maxSpeed;
     private float rateOfDecay;
@@ -18,18 +19,20 @@ public class PlayerControl : MonoBehaviour
     [HideInInspector] public bool isAlive;
     private bool onFire;
     private float fireTimer;
+    private int limbIndex;
 
     // Start is called before the first frame update
     void Start()
     {
         FireEffect.gameObject.SetActive(false);
         maxSpeed = 13;
-        rateOfDecay = 0.0005f;
+        rateOfDecay = 0.00075f;
         rgbd = this.GetComponent<Rigidbody>();
         aud = this.GetComponent<AudioSource>();
         cameraOffset = MainCam.transform.position - this.transform.position;
         isAlive = true;
         onFire = false;
+        limbIndex = 0;
     }
 
     // Update is called once per frame
@@ -114,6 +117,16 @@ public class PlayerControl : MonoBehaviour
         {
             Destroy(other.gameObject);
             this.transform.localScale += Vector3.one * 0.1f;
+            // CAN ADD SOUND HERE FOR PICKING UP TRASH
+        }
+
+        // pickup limbs in kouhai mode
+        if (other.tag == "limb" && other.GetComponent<MeshRenderer>().enabled)
+        {
+            other.gameObject.SetActive(false);
+            this.transform.localScale += Vector3.one * 0.2f;
+            Limbs[limbIndex].SetActive(true);
+            limbIndex++;
         }
     }
 
@@ -131,6 +144,7 @@ public class PlayerControl : MonoBehaviour
             rgbd.useGravity = false;
         }
 
+        // collision with fire hazard
         if (collision.gameObject.tag == "firehazard")
         {
             Destroy(collision.gameObject);
@@ -139,11 +153,13 @@ public class PlayerControl : MonoBehaviour
                 maxSpeed += 10;
                 moveSpeed += 5;
                 rateOfDecay *= 2.5f;
-            } 
+            }
             onFire = true;
             fireTimer = 0;
             FireEffect.gameObject.SetActive(true);
+            // set audio source's clip
             aud.clip = yell;
+            // play the audio source
             aud.Play();
         }
     }
