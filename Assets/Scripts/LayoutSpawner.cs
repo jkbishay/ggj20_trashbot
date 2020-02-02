@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class LayoutSpawner : MonoBehaviour
 {
-    public GameObject ItemToSpawn;
-    public int itemsToSpawn;
+    public GameObject TrashToSpawn;
+    public GameObject[] Hazards;
+    public int numTrash;
+    public int numHazards;
     public float overlapTestBoxSize;
     public LayerMask spawnedObjectLayer;
 
@@ -13,20 +15,27 @@ public class LayoutSpawner : MonoBehaviour
     public float itemSpreadY;
     public float itemSpreadZ;
 
-    private int spawned;
+    private int spawnedTrash;
 
     // Start is called before the first frame update
     void Start()
     {
-        spawned = 0;
-        for (int i = 0; i < itemsToSpawn; i++)
+        int hazardIndex;
+        for (int i = 0; i < numHazards; i++)
         {
-            SpreadItems();
+            hazardIndex = Random.Range(0, Hazards.Length);
+            SpreadItems(Hazards[hazardIndex]);
         }
-        Debug.Log(spawned);
+
+        spawnedTrash = 0;
+        for (int i = 0; i < numTrash; i++)
+        {
+            SpreadItems(TrashToSpawn);
+        }
+        Debug.Log(spawnedTrash);
     }
 
-    void RaycastPosition(Vector3 position)
+    void RaycastPosition(Vector3 position, GameObject Item)
     {
         RaycastHit hit;
 
@@ -42,20 +51,20 @@ public class LayoutSpawner : MonoBehaviour
             if (numberOfCollidersFound == 0)
             {
                 //Debug.Log("spawned robot");
-                Spawn(hit.point + new Vector3(0, 0.2f, 0), spawnRotation);
+                Spawn(Item, hit.point + new Vector3(0, 0.2f, 0), spawnRotation);
             }
         }
     }
 
-    void SpreadItems()
+    void SpreadItems(GameObject Item)
     {
         Vector3 randPos = new Vector3(Random.Range(-itemSpreadX, itemSpreadX), itemSpreadY, Random.Range(-itemSpreadZ, itemSpreadZ));
-        RaycastPosition(randPos);
+        RaycastPosition(randPos, Item);
     }
     
-    void Spawn(Vector3 position, Quaternion rotation)
+    void Spawn(GameObject Item, Vector3 position, Quaternion rotation)
     {
-        Instantiate(ItemToSpawn, position, rotation);
-        spawned++;
+        Instantiate(Item, position, rotation);
+        spawnedTrash++;
     }
 }
