@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 680, y: 492}
   m_MaxSize: {x: 14003, y: 14042}
   vertical: 0
-  controlID: 60
+  controlID: 62
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -151,7 +151,7 @@ MonoBehaviour:
     y: 0
     width: 1458
     height: 819
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &7
 MonoBehaviour:
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 61
+  controlID: 63
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 62
+  controlID: 64
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -365,20 +365,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Barrels/prefabs
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Barrels/prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Leighton\Desktop\ggj20_trashbot
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 00340000
-    m_LastClickedID: 13312
-    m_ExpandedIDs: 00000000003400000a3400008a35000000ca9a3bffffff7f
+    m_SelectedIDs: 7a340000
+    m_LastClickedID: 13434
+    m_ExpandedIDs: 000000005c3400005e3400006034000062340000643400007e34000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -406,7 +406,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000000340000
+    m_ExpandedIDs: 000000005c3400005e340000603400006234000064340000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -531,7 +531,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 92c7ffffb8caffffb2d5ffff08edffff72fbffff56330000
+      m_ExpandedIDs: 84f7ffff70fbffff72fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -591,9 +591,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 2.2994952, y: 0.36937428, z: 11.886653}
+    m_Target: {x: 3.19806, y: -0.30997086, z: 11.723933}
     speed: 2
-    m_Value: {x: 2.2994952, y: 0.36937428, z: 11.886653}
+    m_Value: {x: 3.19806, y: -0.30997086, z: 11.723933}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -639,13 +639,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.11847073, y: 0.031866215, z: -0.0037934221, w: -0.99244636}
+    m_Target: {x: -0.1259654, y: 0.012497227, z: -0.0015765429, w: -0.9919628}
     speed: 2
-    m_Value: {x: -0.118457936, y: 0.034843147, z: -0.004148786, w: -0.99233896}
+    m_Value: {x: -0.1259654, y: 0.012497228, z: -0.001576543, w: -0.99196285}
   m_Size:
-    m_Target: 22.587957
+    m_Target: 18.248602
     speed: 2
-    m_Value: 23.652311
+    m_Value: 18.248602
   m_Ortho:
     m_Target: 0
     speed: 2
