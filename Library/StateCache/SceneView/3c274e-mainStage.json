@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":false,"pivot":{"x":-0.5099326968193054,"y":0.1162707582116127,"z":-2.974003553390503},"rotation":{"x":0.10981665551662445,"y":-0.3620178997516632,"z":0.043002549558877948,"w":0.9246928095817566},"size":10.74560546875,"orthographic":false}
 =======
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":false,"pivot":{"x":2.299495220184326,"y":0.36937427520751955,"z":11.886652946472168},"rotation":{"x":-0.11847072839736939,"y":0.03186621516942978,"z":-0.003793422132730484,"w":-0.9924463629722595},"size":22.58795738220215,"orthographic":false}
 >>>>>>> origin/leighton-villanueva-branch
+=======
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":false,"pivot":{"x":3.1980600357055666,"y":-0.3099708557128906,"z":11.723933219909668},"rotation":{"x":-0.1259654015302658,"y":0.01249722670763731,"z":-0.001576542854309082,"w":-0.9919627904891968},"size":18.24860191345215,"orthographic":false}
+>>>>>>> leighton-villanueva-branch
