@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LayoutSpawner : MonoBehaviour
 {
-    public GameObject TrashToSpawn;
+    public GameObject[] TrashToSpawn;
     public GameObject[] Hazards;
     public int numTrash;
     public int numHazards;
@@ -27,10 +27,12 @@ public class LayoutSpawner : MonoBehaviour
             SpreadItems(Hazards[hazardIndex]);
         }
 
+        int trashIndex;
         spawnedTrash = 0;
         for (int i = 0; i < numTrash; i++)
         {
-            SpreadItems(TrashToSpawn);
+            trashIndex = Random.Range(0, TrashToSpawn.Length);
+            SpreadItems(TrashToSpawn[trashIndex]);
         }
         Debug.Log(spawnedTrash);
     }
@@ -50,7 +52,6 @@ public class LayoutSpawner : MonoBehaviour
 
             if (numberOfCollidersFound == 0)
             {
-                //Debug.Log("spawned robot");
                 Spawn(Item, hit.point + new Vector3(0, 0.2f, 0), spawnRotation);
             }
         }
@@ -64,7 +65,15 @@ public class LayoutSpawner : MonoBehaviour
     
     void Spawn(GameObject Item, Vector3 position, Quaternion rotation)
     {
-        Instantiate(Item, position, rotation);
+        if (Item == TrashToSpawn[2])
+        {
+            position += new Vector3(0, 0.2f, 0);
+        }
+        else if (Item == TrashToSpawn[0] || Item == TrashToSpawn[4])
+        {
+            position += new Vector3(0, 0.1f, 0);
+        }
+        Instantiate(Item, position, Item.transform.rotation);
         spawnedTrash++;
     }
 }

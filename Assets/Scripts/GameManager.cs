@@ -8,15 +8,45 @@ public class GameManager : MonoBehaviour
     public GameObject WEEB;
     public Transform[] WEEBSpawnPoints;
 
+    private float WEEBInterval;
     private float timer;
+    private float timeLimit;
     private int WEEBCount;
+
+    [SerializeField] private GameMode mode;
+
+    private enum GameMode
+    {
+        KOUHAI,
+        SENPAI,
+        SENSEI
+    }
 
     // Start is called before the first frame update
     void Start()
     {
+        switch(mode)
+        {
+            case GameMode.KOUHAI:
+                WEEBCount = 0;
+                WEEBInterval = 10;
+                break;
+            case GameMode.SENPAI:
+                WEEBCount = 0;
+                WEEBInterval = 1;
+                 break;
+            case GameMode.SENSEI:
+                WEEBInterval = 10;
+                WEEBCount = 3;
+                break;
+        }
+
         timer = 0;
-        WEEBCount = 0;
-        SpawnWEEB();
+
+        for (int i = 0; i < WEEBCount; i++)
+        {
+            SpawnWEEB();
+        }
     }
 
     // Update is called once per frame
@@ -27,7 +57,7 @@ public class GameManager : MonoBehaviour
             timer += Time.deltaTime;
         }
 
-        if (timer >= WEEBCount * 10)
+        if (timer >= WEEBCount * WEEBInterval)
         {
             // spawn new bot
             SpawnWEEB();
