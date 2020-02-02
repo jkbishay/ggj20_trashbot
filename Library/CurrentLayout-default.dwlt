@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 822
+  controlID: 112
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 311
     height: 731
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 823
+  controlID: 67
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 36
+  controlID: 41
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -365,20 +365,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Models
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Models
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\UnityProjects\ggj20_trashbot
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ac460000
-    m_LastClickedID: 18092
-    m_ExpandedIDs: 00000000b034000000ca9a3b
+    m_SelectedIDs: 84360000
+    m_LastClickedID: 13956
+    m_ExpandedIDs: 000000008436000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -406,7 +406,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b0340000
+    m_ExpandedIDs: 0000000084360000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -529,20 +529,20 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 18340000
       m_LastClickedID: 0
-      m_ExpandedIDs: 08bcffffcabcffff7acbffff7adcffff8edcffff5eddffff28deffff72fbffff
+      m_ExpandedIDs: 2cf4ffffccf4ffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: pond
-        m_OriginalName: pond
+        m_Name: WeebBot
+        m_OriginalName: WeebBot
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -17400
+        m_UserData: -3028
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 0
@@ -591,9 +591,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 11.330368, y: 0.068511546, z: -4.024736}
+    m_Target: {x: 3.104562, y: 1.7727667, z: -6.4840736}
     speed: 2
-    m_Value: {x: 11.330368, y: 0.068511546, z: -4.024736}
+    m_Value: {x: 3.104562, y: 1.7727667, z: -6.4840736}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -639,13 +639,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.09186715, y: -0.90708226, z: 0.31253368, w: -0.26663393}
+    m_Target: {x: 0.01583028, y: -0.9662536, z: 0.24972193, w: 0.06125113}
     speed: 2
-    m_Value: {x: -0.09226658, y: -0.90660846, z: 0.31389257, w: -0.26649466}
+    m_Value: {x: 0.016579296, y: -0.966061, z: 0.24967214, w: 0.06414931}
   m_Size:
-    m_Target: 6.2157283
+    m_Target: 1.620954
     speed: 2
-    m_Value: 5.915728
+    m_Value: 1.6209542
   m_Ortho:
     m_Target: 0
     speed: 2
