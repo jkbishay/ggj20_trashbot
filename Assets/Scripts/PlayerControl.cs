@@ -10,6 +10,8 @@ public class PlayerControl : MonoBehaviour
     private float maxSpeed;
     private Rigidbody rgbd;
     private Vector3 cameraOffset;
+    private Vector3 cameraZoomOffset;
+    [HideInInspector] public bool isAlive;
 
     // Start is called before the first frame update
     void Start()
@@ -17,16 +19,18 @@ public class PlayerControl : MonoBehaviour
         maxSpeed = 13;
         rgbd = this.GetComponent<Rigidbody>();
         cameraOffset = MainCam.transform.position - this.transform.position;
+        isAlive = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         // make camera follow player 
-        MainCam.transform.position = this.transform.position + cameraOffset;
+        cameraZoomOffset = MainCam.transform.forward * this.transform.localScale.magnitude;
+        MainCam.transform.position = this.transform.position + cameraOffset - cameraZoomOffset;
 
         // movement when not at max speed
-        if (rgbd.velocity.magnitude < maxSpeed)
+        if (rgbd.velocity.magnitude < maxSpeed && isAlive)
         {
             if (Input.GetKey(KeyCode.W))
             {
@@ -47,12 +51,21 @@ public class PlayerControl : MonoBehaviour
         }
 
         // decay over time
-        this.transform.localScale -= Vector3.one * 0.00025f;
+        if (isAlive)
+        {
+            this.transform.localScale -= Vector3.one * 0.0005f;
+        }
 
         // die when too smol
         if (this.transform.localScale.magnitude < 0.7f)
         {
-            Destroy(this.gameObject);
+            this.GetComponentInChildren<MeshRenderer>().enabled = false;
+            isAlive = false;
+            foreach (Collider col in this.GetComponents<Collider>())
+            {
+                col.enabled = false;
+            }
+            rgbd.useGravity = false;
         }
     }
 
@@ -63,6 +76,21 @@ public class PlayerControl : MonoBehaviour
         {
             Destroy(other.gameObject);
             this.transform.localScale += Vector3.one * 0.1f;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        // die when hit by WEEB
+        if (collision.gameObject.tag == "WEEB")
+        {
+            this.GetComponentInChildren<MeshRenderer>().enabled = false;
+            isAlive = false;
+            foreach (Collider col in this.GetComponents<Collider>())
+            {
+                col.enabled = false;
+            }
+            rgbd.useGravity = false;
         }
     }
 }
