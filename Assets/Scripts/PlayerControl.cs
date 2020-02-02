@@ -50,6 +50,9 @@ public class PlayerControl : MonoBehaviour
             }
         }
 
+        // make trash bag look at move direction
+        transform.rotation = Quaternion.LookRotation(new Vector3(rgbd.velocity.x, 0, rgbd.velocity.z));
+
         // decay over time
         if (isAlive)
         {
